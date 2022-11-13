@@ -6,12 +6,12 @@ fun main() {
     TODO("프로그램 구현")
 }
 
-fun printAndInput(what: String): String {
-	val postposition = when (what) {
-		"구입금액" -> "을"
-		"당첨 번호", "보너스 번호" -> "를"
-		else -> throw IllegalArgumentException("[ERROR] inappropriate order")
+fun printAndInput(order: String): String {
+	val postposition = when (order) {
+		Enum.UserInput.BUY_PRICE.order -> "을"
+		Enum.UserInput.WINNING_NUMBER.order, Enum.UserInput.BONUS_NUMBER.order -> "를"
+		else -> throw IllegalArgumentException(Enum.UserInput.ERROR.order)
 	}
-	println("$what$postposition 입력해 주세요.")
+	println("$order$postposition${Enum.UserInput.PLEASE_ENTER.order}")
 	return Console.readLine()
 }
