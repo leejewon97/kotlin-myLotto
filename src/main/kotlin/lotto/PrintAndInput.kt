@@ -12,4 +12,9 @@ class PrintAndInput {
 		println("당첨 번호를 입력해 주세요.")
 		Console.readLine()
 	}
+
+	fun bonusNumber() {
+		println("보너스 번호를 입력해 주세요.")
+		Console.readLine()
+	}
 }
