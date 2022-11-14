@@ -8,4 +8,14 @@ class Enum {
 		ERROR("[ERROR] inappropriate order"),
 		PLEASE_ENTER( " 입력해 주세요.")
 	}
+
+	enum class Error(val words: String) {
+		INVALID_NUMBER("[ERROR] invalid number input"),
+		INAPPROPRIATE_ORDER("[ERROR] inappropriate order"),
+	}
+
+	enum class Numbers(val value: Long) {
+		LONG_ZERO(0L),
+		UNIT(1000)
+	}
 }
