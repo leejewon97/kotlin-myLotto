@@ -20,7 +20,7 @@ class UserInputValid {
 	fun winningNumbers(numbersWithComma: String): Boolean {
 		when {
 			!Pattern.matches(
-				Enum.Strings.REGEX.value,
+				Enum.Strings.NUMBERS_WITH_COMMA_REGEX.value,
 				numbersWithComma
 			) -> return false
 			else -> {
@@ -30,6 +30,17 @@ class UserInputValid {
 						return false
 				return true
 			}
+		}
+	}
+
+	fun bonusNumber(number: String): Boolean {
+		return when {
+			!Pattern.matches(
+				Enum.Strings.ONLY_NUMBER_REGEX.value,
+				number
+			) -> false
+			number.toInt() !in Enum.Numbers.MIN_LOTTO_NUMBER.value..Enum.Numbers.MAX_LOTTO_NUMBER.value -> false
+			else -> true
 		}
 	}
 }

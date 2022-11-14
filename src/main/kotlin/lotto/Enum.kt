@@ -21,6 +21,7 @@ class Enum {
 	}
 
 	enum class Strings(val value: String) {
-		REGEX("^[0-9]{1,2},[0-9]{1,2},[0-9]{1,2},[0-9]{1,2},[0-9]{1,2}\$")
+		NUMBERS_WITH_COMMA_REGEX("^[0-9]{1,2},[0-9]{1,2},[0-9]{1,2},[0-9]{1,2},[0-9]{1,2}\$"),
+		ONLY_NUMBER_REGEX("^[0-9]{1,2}\$")
 	}
 }
