@@ -15,6 +15,12 @@ class Enum {
 
 	enum class Numbers(val value: Long) {
 		LONG_ZERO(0L),
-		UNIT(1000)
+		UNIT(1000),
+		MIN_LOTTO_NUMBER(1),
+		MAX_LOTTO_NUMBER(45)
+	}
+
+	enum class Strings(val value: String) {
+		REGEX("^[0-9]{1,2},[0-9]{1,2},[0-9]{1,2},[0-9]{1,2},[0-9]{1,2}\$")
 	}
 }
