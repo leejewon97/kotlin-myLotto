@@ -8,10 +8,10 @@ fun main() {
 
 fun printAndInput(order: String): String {
 	val postposition = when (order) {
-		Enum.UserInput.BUY_PRICE.order -> "을"
-		Enum.UserInput.WINNING_NUMBER.order, Enum.UserInput.BONUS_NUMBER.order -> "를"
-		else -> throw IllegalArgumentException(Enum.UserInput.ERROR.order)
+		Enum.UserInputWord.BUY_PRICE.order -> "을"
+		Enum.UserInputWord.WINNING_NUMBER.order, Enum.UserInputWord.BONUS_NUMBER.order -> "를"
+		else -> throw IllegalArgumentException(Enum.Error.INAPPROPRIATE_ORDER.words)
 	}
-	println("$order$postposition${Enum.UserInput.PLEASE_ENTER.order}")
+	println("$order$postposition${Enum.UserInputWord.PLEASE_ENTER.order}")
 	return Console.readLine()
 }
