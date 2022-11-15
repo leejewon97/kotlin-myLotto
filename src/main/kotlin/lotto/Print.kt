@@ -20,4 +20,26 @@ class Print {
 			println(lotto.getNumbers().sorted())
 		}
 	}
+
+	fun winningByRank(countWinnings: Map<Int, Int?>) {
+		val totalReturn = mutableMapOf<Int, Int?>()
+		for (key in Enum.Index.WINNING_COUNT_ZERO.value..Enum.Index.WINNING_COUNT_FOUR.value)
+			totalReturn[key] = Enum.Index.WINNING_COUNT_ZERO.value
+		for (countWinning in countWinnings) {
+			if (countWinning.value != null)
+				totalReturn[countWinning.key - Enum.Index.WINNING_COUNT_MEDIATOR.value] = countWinning.value
+		}
+		println(Enum.Print.RATE)
+		switchSecondAndFirst(totalReturn)
+		val countPrints = listOf(Enum.Print.CORRECT_THREE.words, Enum.Print.CORRECT_FOUR.words, Enum.Print.CORRECT_FIVE.words, Enum.Print.CORRECT_BONUS.words, Enum.Print.CORRECT_SIX.words)
+		for (index in countPrints.indices) {
+			println("${countPrints[index]}${totalReturn[index]}${Enum.Print.UNIT}")
+		}
+	}
+
+	private fun switchSecondAndFirst(totalReturn: MutableMap<Int, Int?>) {
+		val temp = totalReturn[Enum.Index.WINNING_COUNT_SECOND.value]
+		totalReturn[Enum.Index.WINNING_COUNT_SECOND.value] = totalReturn[Enum.Index.WINNING_COUNT_FIRST.value]
+		totalReturn[Enum.Index.WINNING_COUNT_FIRST.value] = temp
+	}
 }

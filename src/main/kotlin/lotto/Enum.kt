@@ -33,7 +33,12 @@ class Enum {
 
 	enum class Index(val value: Int) {
 		WINNING_NUMBERS(0),
-		BONUS_NUMBER(1)
+		BONUS_NUMBER(1),
+		WINNING_COUNT_ZERO(0),
+		WINNING_COUNT_FOUR(4),
+		WINNING_COUNT_MEDIATOR(3),
+		WINNING_COUNT_SECOND(3),
+		WINNING_COUNT_FIRST(4)
 	}
 
 	enum class Bonus(val value: Int) {
