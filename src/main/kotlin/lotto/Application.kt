@@ -32,11 +32,23 @@ fun issueLotto(price: Long): List<Lotto> {
 	return lottoList
 }
 
-fun calculateWinningLotto(lottoList: List<Lotto>, winningAndBonusNumbers: List<MutableList<Int>>): List<Int> {
+fun calculateWinningLotto(lottoList: List<Lotto>, winningAndBonusNumbers: List<List<Int>>): List<Int> {
+	val countWinnings = mutableListOf<Int>()
 	for (lotto in lottoList) {
-		countWinning(lotto, winningAndBonusNumbers)
+		var count = countWinning(lotto, winningAndBonusNumbers[Enum.Index.WINNING_NUMBERS.value])
+		if (count == 5)
+			count = checkBonus(lotto, winningAndBonusNumbers[Enum.Index.BONUS_NUMBER.value])
+		countWinnings.add(count)
 	}
-	return listOf()
+	return countWinnings
+}
+
+fun checkBonus(lotto: Lotto, bonus: List<Int>): Int {
+	for (lottoNumber in lotto.getNumbers()) {
+		if (bonus[Enum.Bonus.INDEX.value] == lottoNumber)
+			return Enum.Bonus.YES.value
+	}
+	return Enum.Bonus.NO.value
 }
 
 fun countWinning(lotto: Lotto, winningNumbers: List<Int>): Int {

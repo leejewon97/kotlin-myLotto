@@ -30,6 +30,13 @@ class Enum {
 	}
 
 	enum class Index(val value: Int) {
-		WINNING_NUMBERS(0)
+		WINNING_NUMBERS(0),
+		BONUS_NUMBER(1)
+	}
+
+	enum class Bonus(val value: Int) {
+		INDEX(0),
+		NO(5),
+		YES(7)
 	}
 }
