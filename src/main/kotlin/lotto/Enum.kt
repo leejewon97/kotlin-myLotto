@@ -28,4 +28,8 @@ class Enum {
 		NUMBERS_WITH_COMMA_REGEX("^[0-9]{1,2},[0-9]{1,2},[0-9]{1,2},[0-9]{1,2},[0-9]{1,2}\$"),
 		ONLY_NUMBER_REGEX("^[0-9]{1,2}\$")
 	}
+
+	enum class Index(val value: Int) {
+		WINNING_NUMBERS(0)
+	}
 }
