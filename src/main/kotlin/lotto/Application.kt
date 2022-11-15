@@ -39,9 +39,9 @@ fun calculateWinningLotto(lottoList: List<Lotto>, winningAndBonusNumbers: List<M
 	return listOf()
 }
 
-fun countWinning(lotto: Lotto, winningAndBonusNumbers: List<MutableList<Int>>): Int {
-	val checkLotto = winningAndBonusNumbers[Enum.Index.WINNING_NUMBERS.value]
+fun countWinning(lotto: Lotto, winningNumbers: List<Int>): Int {
+	val checkLotto = winningNumbers.toMutableList()
 	checkLotto.addAll(lotto.getNumbers())
-	return (lotto.getNumbers().size + winningAndBonusNumbers[Enum.Index.WINNING_NUMBERS.value].size) - checkLotto.distinct().size
+	return (lotto.getNumbers().size + winningNumbers.size) - checkLotto.distinct().size
 }
 
