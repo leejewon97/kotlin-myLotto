@@ -11,7 +11,7 @@ class UserInputValid {
 			throw IllegalArgumentException(Enum.Error.INVALID_NUMBER.words)
 		}
 		return when {
-			price >= Enum.Price.LONG_ZERO.value -> false
+			price < Enum.Price.LONG_ZERO.value -> false
 			(price % Enum.Price.UNIT.value) != Enum.Price.LONG_ZERO.value -> false
 			else -> true
 		}

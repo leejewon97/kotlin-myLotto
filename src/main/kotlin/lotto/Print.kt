@@ -6,7 +6,7 @@ class Print {
 	fun andInput(order: String): String {
 		val postposition = when (order) {
 			Enum.UserInputWord.BUY_PRICE.order -> Enum.Strings.POSTPOSITION_TYPE1.value
-			Enum.UserInputWord.WINNING_NUMBER.order, Enum.UserInputWord.BONUS_NUMBER.order -> Enum.Strings.POSTPOSITION_TYPE2
+			Enum.UserInputWord.WINNING_NUMBER.order, Enum.UserInputWord.BONUS_NUMBER.order -> Enum.Strings.POSTPOSITION_TYPE2.value
 			else -> throw IllegalArgumentException(Enum.Error.INAPPROPRIATE_ORDER.words)
 		}
 		println("$order$postposition${Enum.UserInputWord.PLEASE_ENTER.order}")
@@ -39,7 +39,7 @@ class Print {
 			Enum.Print.CORRECT_SIX.words
 		)
 		for (index in countPrints.indices) {
-			println("${countPrints[index]}${totalReturn[index]}${Enum.Print.UNIT}")
+			println("${countPrints[index]}${totalReturn[index]}${Enum.Print.UNIT.words}")
 		}
 	}
 
@@ -50,6 +50,6 @@ class Print {
 	}
 
 	fun rateOfReturn(rate: String) {
-		println("${Enum.Print.TOTAL}$rate${Enum.Print.IS_PERCENT}")
+		println("${Enum.Print.TOTAL.words}$rate${Enum.Print.IS_PERCENT.words}")
 	}
 }
