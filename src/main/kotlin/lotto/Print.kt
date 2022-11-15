@@ -12,4 +12,12 @@ class Print {
 		println("$order$postposition${Enum.UserInputWord.PLEASE_ENTER.order}")
 		return Console.readLine()
 	}
+
+	fun lottoNumbers(lottoList: List<Lotto>, price: Long) {
+		val time = price / Enum.Price.UNIT.value
+		println("${time}개를 구매했습니다.")
+		for (lotto in lottoList) {
+			println(lotto.getNumbers().sorted())
+		}
+	}
 }
