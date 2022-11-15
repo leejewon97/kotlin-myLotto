@@ -19,12 +19,12 @@ fun printAndInput(order: String): String {
 
 fun issueLotto(price: Long): List<Lotto> {
 	val lottoList = mutableListOf<Lotto>()
-	var time = price / Enum.PriceNumbers.UNIT.value
-	while (time > Enum.PriceNumbers.LONG_ZERO.value) {
+	var time = price / Enum.Price.UNIT.value
+	while (time > Enum.Price.LONG_ZERO.value) {
 		val numbers = Randoms.pickUniqueNumbersInRange(
-			Enum.LottoNumbers.MIN.value,
-			Enum.LottoNumbers.MIN.value,
-			Enum.LottoNumbers.QUANTITY.value
+			Enum.LottoNumber.MIN.value,
+			Enum.LottoNumber.MAX.value,
+			Enum.LottoNumber.QUANTITY.value
 		)
 		lottoList.add(Lotto(numbers))
 		time--

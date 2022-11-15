@@ -9,16 +9,16 @@ class Enum {
 	}
 
 	enum class Error(val words: String) {
-		INVALID_NUMBER("[ERROR] invalid number input"),
+		INVALID_NUMBER("[ERROR] 로또 번호는 1부터 45 사이의 숫자여야 합니다."),
 		INAPPROPRIATE_ORDER("[ERROR] inappropriate order"),
 	}
 
-	enum class PriceNumbers(val value: Long) {
+	enum class Price(val value: Long) {
 		LONG_ZERO(0L),
-		UNIT(1000),
+		UNIT(1000)
 	}
 
-	enum class LottoNumbers(val value: Int) {
+	enum class LottoNumber(val value: Int) {
 		MIN(1),
 		MAX(45),
 		QUANTITY(6)
@@ -45,6 +45,11 @@ class Enum {
 		MIN(3),
 		MAX(7),
 		INIT(0),
-		COUNT(1)
+		COUNT(1),
+		FIFTH(5_000),
+		FOURTH(50_000),
+		THIRD(1_500_000),
+		SECOND(30_000_000),
+		FIRST(2_000_000_000)
 	}
 }
