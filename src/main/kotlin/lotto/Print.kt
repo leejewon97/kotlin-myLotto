@@ -31,7 +31,13 @@ class Print {
 		}
 		println(Enum.Print.RATE)
 		switchSecondAndFirst(totalReturn)
-		val countPrints = listOf(Enum.Print.CORRECT_THREE.words, Enum.Print.CORRECT_FOUR.words, Enum.Print.CORRECT_FIVE.words, Enum.Print.CORRECT_BONUS.words, Enum.Print.CORRECT_SIX.words)
+		val countPrints = listOf(
+			Enum.Print.CORRECT_THREE.words,
+			Enum.Print.CORRECT_FOUR.words,
+			Enum.Print.CORRECT_FIVE.words,
+			Enum.Print.CORRECT_BONUS.words,
+			Enum.Print.CORRECT_SIX.words
+		)
 		for (index in countPrints.indices) {
 			println("${countPrints[index]}${totalReturn[index]}${Enum.Print.UNIT}")
 		}
@@ -41,5 +47,9 @@ class Print {
 		val temp = totalReturn[Enum.Index.WINNING_COUNT_SECOND.value]
 		totalReturn[Enum.Index.WINNING_COUNT_SECOND.value] = totalReturn[Enum.Index.WINNING_COUNT_FIRST.value]
 		totalReturn[Enum.Index.WINNING_COUNT_FIRST.value] = temp
+	}
+
+	fun rateOfReturn(rate: String) {
+		println("${Enum.Print.TOTAL}$rate${Enum.Print.IS_PERCENT}")
 	}
 }
