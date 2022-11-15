@@ -13,11 +13,15 @@ class Enum {
 		INAPPROPRIATE_ORDER("[ERROR] inappropriate order"),
 	}
 
-	enum class Numbers(val value: Long) {
+	enum class PriceNumbers(val value: Long) {
 		LONG_ZERO(0L),
 		UNIT(1000),
-		MIN_LOTTO_NUMBER(1),
-		MAX_LOTTO_NUMBER(45)
+	}
+
+	enum class LottoNumbers(val value: Int) {
+		MIN(1),
+		MAX(45),
+		QUANTITY(6)
 	}
 
 	enum class Strings(val value: String) {

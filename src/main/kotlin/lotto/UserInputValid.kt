@@ -11,8 +11,8 @@ class UserInputValid {
 			throw IllegalArgumentException(Enum.Error.INVALID_NUMBER.words)
 		}
 		return when {
-			price >= Enum.Numbers.LONG_ZERO.value -> false
-			(price % Enum.Numbers.UNIT.value) != Enum.Numbers.LONG_ZERO.value -> false
+			price >= Enum.PriceNumbers.LONG_ZERO.value -> false
+			(price % Enum.PriceNumbers.UNIT.value) != Enum.PriceNumbers.LONG_ZERO.value -> false
 			else -> true
 		}
 	}
@@ -26,7 +26,7 @@ class UserInputValid {
 			else -> {
 				val numbers = numbersWithComma.split(',').map { it.toInt() }
 				for (number in numbers)
-					if (number !in Enum.Numbers.MIN_LOTTO_NUMBER.value..Enum.Numbers.MAX_LOTTO_NUMBER.value)
+					if (number !in Enum.LottoNumbers.MIN.value..Enum.LottoNumbers.MAX.value)
 						return false
 				return true
 			}
@@ -39,7 +39,7 @@ class UserInputValid {
 				Enum.Strings.ONLY_NUMBER_REGEX.value,
 				number
 			) -> false
-			number.toInt() !in Enum.Numbers.MIN_LOTTO_NUMBER.value..Enum.Numbers.MAX_LOTTO_NUMBER.value -> false
+			number.toInt() !in Enum.LottoNumbers.MIN.value..Enum.LottoNumbers.MAX.value -> false
 			else -> true
 		}
 	}
