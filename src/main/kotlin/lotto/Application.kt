@@ -1,6 +1,7 @@
 package lotto
 
 import camp.nextstep.edu.missionutils.Console
+import camp.nextstep.edu.missionutils.Randoms
 
 fun main() {
     TODO("프로그램 구현")
@@ -15,3 +16,15 @@ fun printAndInput(order: String): String {
 	println("$order$postposition${Enum.UserInputWord.PLEASE_ENTER.order}")
 	return Console.readLine()
 }
+
+fun issueLotto(price: Long): List<Lotto> {
+	val lottoList = mutableListOf<Lotto>()
+	var time = price / Enum.PriceNumbers.UNIT.value
+	while (time > Enum.PriceNumbers.LONG_ZERO.value) {
+		val numbers = Randoms.pickUniqueNumbersInRange(Enum.LottoNumbers.MIN.value, Enum.LottoNumbers.MIN.value, Enum.LottoNumbers.QUANTITY.value)
+		lottoList.add(Lotto(numbers))
+		time--
+	}
+	return lottoList
+}
+
