@@ -26,7 +26,9 @@ class Enum {
 
 	enum class Strings(val value: String) {
 		NUMBERS_WITH_COMMA_REGEX("^[0-9]{1,2},[0-9]{1,2},[0-9]{1,2},[0-9]{1,2},[0-9]{1,2}\$"),
-		ONLY_NUMBER_REGEX("^[0-9]{1,2}\$")
+		ONLY_NUMBER_REGEX("^[0-9]{1,2}\$"),
+		POSTPOSITION_TYPE1("을"),
+		POSTPOSITION_TYPE2("를")
 	}
 
 	enum class Index(val value: Int) {
