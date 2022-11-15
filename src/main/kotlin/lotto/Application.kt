@@ -36,7 +36,7 @@ fun calculateWinningByLotto(lottoList: List<Lotto>, winningAndBonusNumbers: List
 	val calculateWinnings = mutableListOf<Int>()
 	for (lotto in lottoList) {
 		var count = countRepeat(lotto, winningAndBonusNumbers[Enum.Index.WINNING_NUMBERS.value])
-		if (count == 5)
+		if (count == Enum.Bonus.HAVE_TO_CHECK.value)
 			count = checkBonus(lotto, winningAndBonusNumbers[Enum.Index.BONUS_NUMBER.value])
 		calculateWinnings.add(count)
 	}

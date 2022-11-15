@@ -36,6 +36,7 @@ class Enum {
 
 	enum class Bonus(val value: Int) {
 		INDEX(0),
+		HAVE_TO_CHECK(5),
 		NO(5),
 		YES(7)
 	}
