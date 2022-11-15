@@ -40,4 +40,11 @@ class Enum {
 		NO(5),
 		YES(7)
 	}
+
+	enum class Rank(val value: Int) {
+		MIN(3),
+		MAX(7),
+		INIT(0),
+		COUNT(1)
+	}
 }

@@ -32,6 +32,16 @@ fun issueLotto(price: Long): List<Lotto> {
 	return lottoList
 }
 
+fun countWinningByRank(calculateWinnings: List<Int>): Map<Int, Int?> {
+	val countWinnings = mutableMapOf<Int, Int?>()
+	for (key in Enum.Rank.MIN.value..Enum.Rank.MAX.value)
+		countWinnings[key] = Enum.Rank.INIT.value
+	for (calculateWinning in calculateWinnings) {
+		countWinnings[calculateWinning] = countWinnings[calculateWinning]?.plus(Enum.Rank.COUNT.value)
+	}
+	return countWinnings.toMap()
+}
+
 fun calculateWinningByLotto(lottoList: List<Lotto>, winningAndBonusNumbers: List<List<Int>>): List<Int> {
 	val calculateWinnings = mutableListOf<Int>()
 	for (lotto in lottoList) {
